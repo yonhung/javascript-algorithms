@@ -29,6 +29,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./src/**",
+    "lintfix": "eslint ./src/** --fix",
     "test": "jest",
     "coverage": "npm run test -- --coverage",
     "ci": "npm run lint && npm run coverage",
