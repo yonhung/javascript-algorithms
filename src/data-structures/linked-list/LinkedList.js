@@ -68,6 +68,7 @@ export default class LinkedList {
       let currentNode = this.head;
       const newNode = new LinkedListNode(value);
       while (currentNode) {
+        // Get the node before the index when count === index
         if (count === index) break;
         currentNode = currentNode.next;
         count += 1;
@@ -75,6 +76,8 @@ export default class LinkedList {
       if (currentNode) {
         newNode.next = currentNode.next;
         currentNode.next = newNode;
+      // If index bigger than the length of the linked list
+      // insert it to the tail
       } else {
         if (this.tail) {
           this.tail.next = newNode;
@@ -89,6 +92,7 @@ export default class LinkedList {
   }
 
   /**
+   * Delete all nodes with the given value
    * @param {*} value
    * @return {LinkedListNode}
    */
@@ -176,9 +180,10 @@ export default class LinkedList {
 
     // Rewind to the last node and delete "next" link for the node before the last one.
     let currentNode = this.head;
-    while (currentNode.next) {
+    while (currentNode) {
       if (!currentNode.next.next) {
         currentNode.next = null;
+        break;
       } else {
         currentNode = currentNode.next;
       }
