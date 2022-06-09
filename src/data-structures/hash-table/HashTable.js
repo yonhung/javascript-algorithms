@@ -22,7 +22,7 @@ export default class HashTable {
    * Converts key string to hash number.
    *
    * @param {string} key
-   * @return {number}
+   * @return {number} index
    */
   hash(key) {
     // For simplicity reasons we will just use character codes sum of all characters of the key
